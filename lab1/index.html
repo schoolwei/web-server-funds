@@ -27,6 +27,45 @@
             This is a list item! #3 <a target="_blank" href="https://google.com">Open Google in new window!</a>
         </li>
     </ol>
+    <form>
+        <h3>What is your favorite language?</h3>
+        <input type="radio" name="language">
+        <label>French</label>
+        <input type="radio" name="language">
+        <label>English</label>
+        <input type="radio" name="language">
+        <label>Typescript</label>
+        <input type="radio" name="language">
+        <label>Chinese</label>
+        <input type="radio" name="language">
+        <label>PHP</label>
+        <input type="radio" name="language">
+        <label>Hebrew</label>
+        <input type="radio" name="language">
+        <label>German</label>
+
+        <h3>How old are you?</h3>
+
+        <input type="range" step="1" max="100" min="1"/>
+
+        <h3>What is your name?</h3>
+
+        <input placeholder="Type your name here" pattern="\w+"/>
+
+        <h3>Your email?</h3>
+
+        <input placeholder="name@domain.tld" required type="email"/>
+
+        <h3>What is your gender?</h3>
+
+        <select required>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
 </body>
 
 </html>
