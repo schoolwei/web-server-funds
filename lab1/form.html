@@ -74,13 +74,13 @@
 
         const PADDING = 10
         const ELASTICITY = 0.5
-        const DISTANCE2 = 100 ** 2
-        const FRICTIONLESS = 0.95
+        const DISTANCE2 = 50 ** 2
+        const SLIPPERINESS = 0.95
 
         let mouseX = 0
         let mouseY = 0
-        let vx = 0.1
-        let vy = 0.1
+        let vx = 0
+        let vy = 0
         let ox = 0
         let oy = 0
 
@@ -105,13 +105,16 @@
             const distance2 = dx ** 2 + dy ** 2
 
             if (distance2 < DISTANCE2) {
-                vx = -dx
-                vy = -dy
+                vx = -dx / distance2
+                vy = -dy / distance2
             }
             
-            ox += vx * FRICTIONLESS
-            oy += vy * FRICTIONLESS
-            
+            ox += vx
+            oy += vy
+
+            vx *= SLIPPERINESS
+            vy *= SLIPPERINESS
+
             checkbox.style.transform = `translate(${ox}px, ${oy}px)`
             requestAnimationFrame(render)
         }
