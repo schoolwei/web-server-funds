@@ -73,7 +73,7 @@
         const ageInput = document.getElementById("age-input")
         const ageP = document.getElementById("age-p")
         ageInput.oninput = () => ageP.textContent = `You are ${ageInput.value} years old!`
-        ageInput.onchange()
+        ageInput.oninput()
     </script>
 </body>
 
