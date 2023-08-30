@@ -107,6 +107,9 @@
             if (distance < DISTANCE) {
                 vx = -dx / distance
                 vy = -dy / distance
+            } else if (distance > DISTANCE * 2) {
+                vx = Math.sign(-ox)
+                vy = Math.sign(-oy)
             }
             
             ox += vx
