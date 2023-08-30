@@ -24,68 +24,12 @@
             This is a list item! #2 <a href="/web-server-funds/lab1/another">Another Page</a>
         </li>
         <li>
+            This is a list item! #2 <a href="/web-server-funds/lab1/form">Form Page</a>
+        </li>
+        <li>
             This is a list item! #3 <a target="_blank" href="https://google.com">Open Google in new window!</a>
         </li>
     </ol>
-    <form id="form">
-        <h3>What is your favorite language?</h3>
-        <input type="radio" name="language">
-        <label>French</label>
-        <input type="radio" name="language">
-        <label>English</label>
-        <input type="radio" name="language">
-        <label>Typescript</label>
-        <input type="radio" name="language">
-        <label>Chinese</label>
-        <input type="radio" name="language">
-        <label>PHP</label>
-        <input type="radio" name="language">
-        <label>Hebrew</label>
-        <input type="radio" name="language">
-        <label>German</label>
-
-        <h3>How old are you?</h3>
-
-        <input id="age-input" type="range" step="1" max="100" min="1"/>
-
-        <p id="age-p"></p>
-
-        <h3>What is your name?</h3>
-
-        <input placeholder="Type your name here" pattern="[a-zA-Z ]+"/>
-
-        <h3>Your email?</h3>
-
-        <input placeholder="name@domain.tld" required type="email"/>
-
-        <h3>What is your gender?</h3>
-
-        <select required>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-        </select>
-
-        <h3>Want your mailbox full of our junk newsletter?</h3>
-
-        <input type="checkbox"/><label>Oh yes for sure!</label>
-
-        <h3>Submit and get started!</h3>
-
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        const ageInput = document.getElementById("age-input")
-        const ageP = document.getElementById("age-p")
-        const form = document.getElementById("form")
-        ageInput.oninput = () => ageP.textContent = `You are ${ageInput.value} years old!`
-        ageInput.oninput()
-        form.onsubmit = (e) => {
-            e.preventDefault()
-            window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        }
-    </script>
 </body>
 
 </html>
