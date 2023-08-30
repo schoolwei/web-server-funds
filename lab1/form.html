@@ -74,8 +74,8 @@
 
         const PADDING = 10
         const ELASTICITY = 0.5
-        const DISTANCE2 = 50 ** 2
-        const SLIPPERINESS = 0.95
+        const DISTANCE = 50
+        const SLIPPERINESS = 0.99
 
         let mouseX = 0
         let mouseY = 0
@@ -102,11 +102,11 @@
 
             const dx = mouseX - x
             const dy = mouseY - y
-            const distance2 = dx ** 2 + dy ** 2
+            const distance = Math.sqrt(dx ** 2 + dy ** 2)
 
-            if (distance2 < DISTANCE2) {
-                vx = -dx / distance2
-                vy = -dy / distance2
+            if (distance < DISTANCE) {
+                vx = -dx / distance
+                vy = -dy / distance
             }
             
             ox += vx
