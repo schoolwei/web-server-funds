@@ -91,8 +91,7 @@
             p2.style.display = "none"
             if (!element.value) {
                 p1.style.display = "block"
-            }     
-            if (!emailRe.test(element.value)) {
+            } else if (!emailRe.test(element.value)) {
                 p2.style.display = "block"
             }
         }
