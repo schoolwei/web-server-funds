@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+
+<body>
+    <h1>Lab 4</h1>
+
+    <h2>2.1.2</h2>
+    <button onclick="alert('You clicked on the alert button')">
+        Alert button here
+    </button>
+
+    <h2>2.1.3</h2>
+    <button onclick="handler213()">
+        Invoke function to change text
+    </button>
+    <p id="p213">
+        This text will be changed
+    </p>
+
+    <script>
+        function handler213() {
+            const text = "This text has been changed"
+            document.getElementById("p213").innerHTML = text
+        }
+    </script>
+
+    <h2>2.1.4</h2>
+    <button onclick="handler214()">
+        Invoke function to vanish
+    </button>
+    <p id="p214">
+        This paragraph will disappear
+    </p>
+
+    <script>
+        function handler214() {
+            document.getElementById("p214").style.display = "none"
+        }
+    </script>
+
+
+    <h2>2.1.5</h2>
+    <button onclick="handler215()">
+        Invoke function to change image
+    </button>
+    <img src="image1.jpg" id="img215" />
+
+    <script>
+        function handler215() {
+            const src = "image2.jpg"
+            document.getElementById("img215").src = src
+        }
+    </script>
+
+    <h2>2.1.6</h2>
+    <button onclick="handler216(this)">
+        This text will change
+    </button>
+
+    <script>
+        /** 
+         * @param {HTMLButtonElement} element
+         */
+        function handler216(element) {
+            element.innerHTML = "This text just changed"
+        }
+    </script>
+
+
+    <h2>2.1.7</h2>
+    <input onblur="handler217(this)" placeholder="Your email" />
+    <p id="p217" style="display: none;">This field is required</p>
+
+    <script>
+        /** 
+         * @param {HTMLInputElement} element
+         */
+        function handler217(element) {
+            const p = document.getElementById("p217")
+            const emailRe = /^\S+@\S+\.\S+$/
+            if (!element.value) {
+                p.style.display = "block"
+            } else {
+                p.style.display = "none"
+            }
+            if (!emailRe.test(element.value)) {
+                alert("Your email is invalid")
+                element.focus()
+            }
+        }
+    </script>
+
+    <h2>2.2.2</h2>
+
+    <p>The text below will be loaded using XHR!</p>
+    <p id="p222"></p>
+
+    <script>
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET", "message.txt")
+        xhr.onload = () => {
+            const p = document.getElementById("p222")
+            p.innerText = xhr.responseText
+        }
+        xhr.onerror = console.log
+        xhr.send()
+    </script>
+    
+</body>
+
+</html>
