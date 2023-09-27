@@ -84,11 +84,11 @@
          * @param {HTMLInputElement} element
          */
         function handler217(element) {
+            const emailRe = /^\S+@\S+\.\S+$/
             const p1 = document.getElementById("p217-1")
             const p2 = document.getElementById("p217-2")
             p1.style.display = "none"
             p2.style.display = "none"
-            const emailRe = /^\S+@\S+\.\S+$/
             if (!element.value) {
                 p1.style.display = "block"
             }     
