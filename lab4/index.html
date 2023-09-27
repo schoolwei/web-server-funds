@@ -76,23 +76,24 @@
 
     <h2>2.1.7</h2>
     <input onblur="handler217(this)" placeholder="Your email" />
-    <p id="p217" style="display: none;">This field is required</p>
+    <p id="p217-1" style="display: none; color:red">This field is required</p>
+    <p id="p217-2" style="display: none; color:red">Your email is invalid</p>
 
     <script>
         /** 
          * @param {HTMLInputElement} element
          */
         function handler217(element) {
-            const p = document.getElementById("p217")
+            const p1 = document.getElementById("p217-1")
+            const p2 = document.getElementById("p217-2")
+            p1.style.display = "none"
+            p2.style.display = "none"
             const emailRe = /^\S+@\S+\.\S+$/
             if (!element.value) {
-                p.style.display = "block"
-            } else {
-                p.style.display = "none"
-            }
+                p1.style.display = "block"
+            }     
             if (!emailRe.test(element.value)) {
-                alert("Your email is invalid")
-                element.focus()
+                p2.style.display = "block"
             }
         }
     </script>
